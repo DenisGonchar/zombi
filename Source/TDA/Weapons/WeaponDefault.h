@@ -89,6 +89,7 @@ public:
 	void FinishReload();
 	void CancelReload();
 
+	UFUNCTION(BlueprintCallable)
 	FVector GetFireEndLocation()const;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Debug")
