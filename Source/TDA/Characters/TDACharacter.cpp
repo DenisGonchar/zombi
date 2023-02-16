@@ -236,6 +236,11 @@ void ATDACharacter::AttackCharEvent(bool bIsFiring)
 
 }
 
+bool ATDACharacter::GetIsAlive()
+{
+	return bIsAlive;
+}
+
 AWeaponDefault* ATDACharacter::GetCurrentWeapon()
 {
 	return CurrentWeapon;
