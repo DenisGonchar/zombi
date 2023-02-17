@@ -40,6 +40,7 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Shield")
 	float GetCurrentShield();
 
+	UFUNCTION(BlueprintCallable, Category = "Shield")
 	void ChangeShieldValue(float ChangeValue);
 
 	void CoolDownShieldEnd();

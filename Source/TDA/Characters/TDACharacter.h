@@ -105,6 +105,9 @@ public:
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Movement")
 	bool bIsAlive = true;
 
+	UFUNCTION(BlueprintCallable, BlueprintPure)
+	bool GetIsAlive();
+
 	//Weapon
 	AWeaponDefault* CurrentWeapon = nullptr;
 

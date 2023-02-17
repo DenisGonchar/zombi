@@ -8,6 +8,8 @@
 #include "Chaos/ChaosEngineInterface.h"
 #include "Types.generated.h"
 
+class UNiagaraSystem;
+
 UENUM(BlueprintType)
 enum class EWeaponType : uint8
 {
@@ -99,6 +101,9 @@ struct FWeaponInfo : public FTableRowBase
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FX")
 	UParticleSystem* EffectFireWeapon = nullptr;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "FX")
+	UNiagaraSystem* MuzzleFireFX = nullptr;
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "Projectile ")
 	FProjectileInfo ProjectileSetting;

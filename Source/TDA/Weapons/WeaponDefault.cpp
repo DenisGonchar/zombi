@@ -8,6 +8,7 @@
 #include <Kismet/KismetMathLibrary.h>
 #include "../InventoryComponent/TDAInventoryComponent.h"
 #include "../Characters/TDACharacter.h"
+#include "../Plugins/FX/Niagara/Source/Niagara/Public/NiagaraFunctionLibrary.h"
 
 // Sets default values
 AWeaponDefault::AWeaponDefault()
@@ -159,6 +160,10 @@ void AWeaponDefault::Fire()
 	UGameplayStatics::SpawnSoundAtLocation(GetWorld(), WeaponSetting.SoundFireWeapon, ShootLocation->GetComponentLocation());
 	UGameplayStatics::SpawnEmitterAtLocation(GetWorld(), WeaponSetting.EffectFireWeapon, ShootLocation->GetComponentTransform());
 	
+	MuzzleLocation = ShootLocation->GetComponentLocation();
+	UNiagaraFunctionLibrary::SpawnSystemAtLocation(GetWorld(), WeaponSetting.MuzzleFireFX, MuzzleLocation, GetActorRotation());
+
+
 	int8 NumberProjectile = GetNumberProjectileByShot();
 
 	if (ShootLocation)
