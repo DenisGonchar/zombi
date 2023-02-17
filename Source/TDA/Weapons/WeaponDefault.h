@@ -76,6 +76,8 @@ public:
 
 	FVector ShootEndLocation = FVector(0);
 
+	FVector MuzzleLocation = FVector::ZeroVector;
+
 	//Timers
 	float FireTimer = 0.0f;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = "ReloadLogic")
